@@ -1,0 +1,38 @@
+The code run in Google Colab.
+Python version: 3.7.10
+
+Step 1:
+In Big Query execute the following query:
+
+SELECT
+  user_id,
+  SUM(basket) AS amountoforder,
+  COUNT(user_id) AS frequency
+FROM
+  `bi-2019-test.ad_hoc.orders_jan2021`
+GROUP BY
+  user_id
+ORDER BY
+  frequency DESC
+  
+The query above returns the total value of all orders (amountoforder) 
+as well as the total count of orders (frequency) for each customer.
+
+Step 2:
+Save the results of the above query in csv format with name 'grouped_data.csv' 
+and upload it in Google Drive into a folder named 'efood'. 
+
+Step 3:
+Upload the efood_assessment.ipynb in Google Colab.
+
+Step 4:
+Run the first cmd of the notebook in order to mount your Drive's contents.
+When you do, a link will appear, click on it, copy the link which you'll find 
+and paste it in the box below the cmd. 
+
+Ster5:
+Run all the cmds in the notebook.
+
+Note: Different runs of the code are expected to have slightly different values 
+as regards the clustering results and maybe the naming of the clusters will also differ.
+
